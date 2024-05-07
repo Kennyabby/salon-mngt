@@ -64,6 +64,7 @@
         display: block;
         font-size: 1.8em;
         margin-left: auto;
+        cursor: pointer;
     }
     .navlogocover{
         width: 100vw;
