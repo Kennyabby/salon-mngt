@@ -347,7 +347,7 @@
     display: grid;
     width: 100%;
     flex-wrap: wrap;
-    grid-template-columns: repeat(auto-fit, minmax(50%,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     margin: 50px 0px;
 }
 .inpcover{
@@ -449,6 +449,12 @@
     .headercover{
         padding-top: 80px;
     }
+    .header{
+        grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
+    }
+    .about-us{
+        grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
+    }
     .headerimg{
         display: none;
         margin: 15px auto;
@@ -464,10 +470,19 @@
         background: linear-gradient(to bottom, rgb(13, 13, 23), rgba(20, 13, 59, 0.5));
         border-radius: 50%;
     }
+    .servicediv{
+        width: 90%;
+    }
+    .pricediv{
+        width: 90%;
+    }
     .appointment{
         grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
     }
+    .appointmentform{
+        grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));;
+    }
     .inp{
-        width:150px;
+        width:200px;
     }
 }
