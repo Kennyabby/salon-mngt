@@ -87,7 +87,7 @@ const LandingPage = ()=>{
         {
             title: "Brow Wax",
             price: "$17",
-            remark: "Eyebrow was, trim and tidy up"
+            remark: "Eyebrow wash, trim and tidy up"
         },
     ]
     return(
