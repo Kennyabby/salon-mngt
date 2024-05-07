@@ -10,7 +10,7 @@ import staff1 from '../../assets/staff1.jpg'
 import staff2 from '../../assets/staff2.jpg'
 import staff3 from '../../assets/staff3.jpg'
 import appointement from '../../assets/appointementimg.jpg'
-
+import {motion, AnimatePresence} from 'framer-motion'
 const LandingPage = ()=>{
     const pricemenu = [
         {
@@ -18,7 +18,6 @@ const LandingPage = ()=>{
             price: "$25",
             remark: "Clasic Haircut for Men and Kids"
         },
-
         {
             title: "Beard Trim",
             price: "$15",
@@ -94,16 +93,36 @@ const LandingPage = ()=>{
         <>
             <header className='headercover'>
                 <div className='header'>
-                    <div className='headerimg'>
+                    <motion.div 
+                        className='headerimg'
+                        initial = {{opacity:0}}
+                        animate = {{opacity:1, transition:{duration: 1, ease:'easeIn'}}}
+                    >
                         <img className='hairstyle' src={hairstyle} />
-                    </div>
+                    </motion.div>
                     <div className='headercontent'>
-                        <div className='headeritem1'>We Create The Latest Hair Style Trends</div>
-                        <div className='headerimg  mobile'>
+                        <motion.div 
+                            className='headeritem1'
+                            initial = {{opacity:0}}
+                            animate = {{opacity:1, transition:{duration: 1, ease:'easeIn'}}}
+                        >
+                            We Create The Latest Hair Style Trends
+                        </motion.div>
+                        <motion.div 
+                            className='headerimg  mobile'
+                            initial = {{opacity:0}}
+                            animate = {{opacity:1, transition:{duration: 1, ease:'easeIn'}}}
+                        >
                             <img className='hairstyle' src={hairstyle} />
-                        </div>
+                        </motion.div>
                         <div className='headeritem2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse nulla pariatur.</div>
-                        <div className='headerbutton'>Book Now</div>
+                        <motion.div 
+                            className='headerbutton'
+                            initial = {{x:50}}
+                            animate = {{x:0, transition:{duration:0.5, ease:'easeOut'}}}
+                        >
+                            Book Now
+                        </motion.div>
                     </div>
                 </div>
             </header>
