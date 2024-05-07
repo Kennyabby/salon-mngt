@@ -8,7 +8,7 @@
     width: 100vw;
     justify-content:space-around;
     padding: 20px;
-    z-index: 5;
+    z-index: 3;
 }
 
 .navlogo{
@@ -42,6 +42,7 @@
     padding: 10px 10px;
     border-radius: 5px;
     width: fit-content;
+    margin: auto;
     font-weight: bold;
     cursor: pointer;
 }
@@ -49,33 +50,50 @@
     display: none;
 }
 @media screen and (max-width: 700px) {
-.navcon{
-    width: 100vw;
-    padding:20px 0px;
-}
-.navmobile{
-    display: block;
-    margin: auto;
-}
-.navicon{
-    display: block;
-    font-size: 1.8em;
-    margin-left: auto;
-}
-.navcontent{
-    display: block;
-    justify-content: center;
-    width: fit-content;
-}
-.navitem{
-    margin: 20px;
-}
-.navmobileview{
-    display: inline-flex;
-    width: 93%;
-}
-.viewnav{
-    display: none;
-    margin: auto;
-}
+    .navcon{
+        display: block;
+        padding:0px;
+        justify-content: center;
+        z-index: 2;
+    }
+    .navmobile{
+        display: block;
+        margin: auto;
+    }
+    .navicon{
+        display: block;
+        font-size: 1.8em;
+        margin-left: auto;
+    }
+    .navlogocover{
+        width: 100vw;
+        padding: 20px 0px;
+        background: rgb(29, 29, 52, 0.97);
+        z-index: 5;
+    }
+    .navcontent{
+        width: 100%;
+        display: block;
+        justify-content: center;
+        padding: 20px 0px;
+        margin-top: 0px;
+        background: rgb(29, 29, 52, 0.97);
+        transition: margin-top 1.5s ease-in-out;
+        z-index: 2;
+    }
+
+    .navbar{
+        display: block;
+    }
+    .navitem{
+        margin: 20px;
+    }
+    .navmobileview{
+        display: inline-flex;
+        width: 93%;
+    }
+    .viewnav{
+        margin: auto;
+        margin-top: -400px;
+    }
 }
