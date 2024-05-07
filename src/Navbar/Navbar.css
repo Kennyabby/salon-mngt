@@ -1,0 +1,80 @@
+.navcon{
+    position: fixed;
+    top: 0;
+    left:0;
+    display: inline-flex;
+    background: rgb(29, 29, 52, 0.97);
+    color: white;
+    width: 100vw;
+    justify-content:space-around;
+    padding: 20px;
+}
+
+.navlogo{
+    width: fit-content;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.navcontent{
+    display: inline-flex;
+    justify-content: space-between;
+    width: 55%;
+    font-size: .8em;
+}
+.navbar{
+    display: flex;
+    list-style: none;
+}
+
+.navitem{
+    margin: auto 10px;
+    cursor: pointer;
+}
+
+.navitem:hover{
+    font-weight: bold;
+}
+
+.navbase{
+    color: rgb(218, 169, 79);
+    padding: 10px 10px;
+    border-radius: 5px;
+    width: fit-content;
+    font-weight: bold;
+    cursor: pointer;
+}
+.navicon{
+    display: none;
+}
+@media screen and (max-width: 700px) {
+.navcon{
+    width: 100vw;
+    padding:20px 0px;
+}
+.navmobile{
+    display: block;
+    margin: auto;
+}
+.navicon{
+    display: block;
+    font-size: 1.8em;
+    margin-left: auto;
+}
+.navcontent{
+    display: block;
+    justify-content: center;
+    width: fit-content;
+}
+.navitem{
+    margin: 20px;
+}
+.navmobileview{
+    display: inline-flex;
+    width: 93%;
+}
+.viewnav{
+    display: none;
+    margin: auto;
+}
+}

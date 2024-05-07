@@ -1,0 +1,473 @@
+.headercover{
+    padding-top: 30px;
+    width: 100%;
+    background: rgba(23, 14, 42, 0.8);
+}
+.headercover:before{
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/headerbg.jpg');
+    background-size: cover ;
+    background-repeat: no-repeat;
+    opacity: 1;
+    width: 100%;
+    z-index: -2;
+    height: 600px;
+}
+.header{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+.headerimg{
+    width: 100%;
+    margin: auto;
+}
+.hairstyle{
+    text-align: left;
+    height: 550px;
+    margin: auto;
+    background: linear-gradient(to bottom, rgb(13, 13, 23), rgba(20, 13, 59, 0.7));
+}
+
+.headercontent{
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: auto; 
+    color: white;
+}
+.headeritem1{
+    text-align: left;
+    font-size: 2.7em;
+    font-weight: bold;
+    margin: 30px auto;
+}
+.headeritem2{
+    text-align: left;
+    font-size: 1.1em;
+}
+.headerbutton{
+    font-size: 1.1em;
+    margin: 30px;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: auto;
+    padding: 10px 15px; 
+    background: rgb(207, 183, 138, 0.6);
+    border-radius: 5px;
+    font-weight: bold;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.main{
+    margin-top: -4px;
+    background: rgba(255,255,255,0.3);
+    /* padding-bottom: 100px; */
+}
+
+.sectiontitle{
+    font-weight: bold;
+    margin: 20px 0px;
+    font-size: 2em;
+}
+
+.sectionmiddle{
+    font-size: 1.3em;
+    margin: 20px auto;
+}
+
+.sectionstyle{
+    font-weight: 400;
+}
+
+.aboutcover{
+    width: 100%;
+    background: rgb(245, 222, 179);  
+    padding: 50px 0px;
+}
+
+.about-us{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+.aboutcontent{
+    width: 100%;
+    text-align: left;
+    margin: auto;
+    font-size: 1.2em;   
+}
+
+.aboutitems{
+    text-align: left;
+}
+
+.aboutimgdiv{
+    width: 90%;
+    margin: 50px auto;
+    
+}
+
+.aboutimg{
+    width: 100%;
+}
+
+.aboutbutton{
+    font-size: 1.1em;
+    margin: 50px;
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 0px;
+    margin-right: auto;
+    padding: 10px 15px; 
+    background: rgb(207, 183, 138, 0.6);
+    border-radius: 5px;
+    font-weight: bold;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.servicescover{
+    width: 100%;
+    background: white;
+    margin: 0px;
+    padding: 100px 0px;
+}
+.services{
+    width: 90%;
+    justify-content: center;
+    margin: 0px auto;
+}
+
+.servicescontent{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    flex-wrap: wrap;
+    margin-top: 70px;
+}
+
+.servicediv{
+    display: block;
+    padding: 20px;
+    background: whitesmoke;
+    border-radius: 7px;
+    width: 300px;
+    margin: 20px auto;
+}
+.servicedivicon{
+    font-size: 3.3em;
+}
+.servicedivtitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3em;
+    margin: 10px;
+}
+
+.servicedivcontent{
+    text-align: center;
+    font-size: 1.1em;
+    margin: 15px;
+    
+}
+
+.runningfigures{
+    width: 100%;
+    background-color: rgba(15, 5, 61, 0.7   );
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+.figures{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: auto;
+    color: white;
+}
+
+.figuresdiv{
+    padding: 20px;
+}
+
+.figuresdivvalue{
+    text-align: left;
+    font-weight: bold ;
+    font-size: 3em;
+}
+
+.figuresdivtitle{
+    text-align: left;
+    color: rgb(234, 203, 144);
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 15px auto;
+}
+
+.figuresdivcontent{
+    text-align: left;
+}
+
+.pricescover{
+    width: 100%;
+    background: white;
+    padding: 90px 0px;
+}
+.pricescontent{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    width: 90%;
+    margin: 60px auto;
+}
+
+.pricediv{
+    width: 300px;
+    margin: 10px auto;
+    padding: 10px 15px;
+    text-align: left;
+    border: solid rgb(150, 104, 24) 2px ;
+}
+.menu{
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    color: rgb(240, 177, 59)
+}
+.menutitle{
+    font-size: 1.2em;
+    color: black;
+    font-weight: 500;
+}
+.menuprice{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.menuremark{
+    text-align: left;
+    margin: 7px auto;
+}
+
+.teamscover{
+    background: rgb(245, 222, 179);
+    padding: 50px 0px;
+}
+.teams{
+    width: 90%;
+    margin: auto;
+}
+
+.teamscontent{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    flex-wrap: wrap;
+}
+.teammember{
+    width: 280px;
+    margin: 20px auto;
+    background: rgba(0,0,0,0.2);
+    border-radius: 7px;
+    padding-bottom: 10px;
+}
+.teammemberimg{
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    width: 100%;
+    height: 350px;
+}
+.teammembername{
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 15px;
+}
+.teammemberrole{
+    color: rgb(161, 110, 8);
+    font-weight: 400;
+}
+
+.imagegallerycover{
+    width: 100%;
+    padding: 50px 0px;
+    background: whitesmoke;
+}
+.gallerycover{
+    display: inline-flex;
+    width: 90%;
+    background: white;
+    height: 250px;
+    margin: 10px auto;
+    border-radius: 20px;
+    overflow-x:auto;
+    white-space: nowrap;
+}
+.galleryimage{
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(0,0,0,0.2);
+    margin: 10px;
+}
+
+.appointmentcover{
+    width: 100%;
+    background: white;
+    padding: 50px 0px;
+}
+.appointment{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    width: 90%;
+    margin: auto;
+}
+.appointmentcontent{
+    justify-content: center;
+    width: 95%;
+    margin: 50px auto;
+    text-align: center;
+    padding: 10px;
+}
+.appointmentimgcover{
+    width: 100%;
+    margin: auto;
+}
+.appointmentimg{
+    width: 90%;
+}
+.appointmentform{
+    display: grid;
+    width: 100%;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(50%,1fr));
+    margin: 50px 0px;
+}
+.inpcover{
+    width:fit-content;
+    margin: 10px auto;
+    text-align: left;
+}
+.inplabel{
+    text-align: left;
+}
+.inp{
+    margin: 10px auto;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
+.formbutton{
+    font-size: 1.1em;
+    text-align: center;
+    margin: 50px auto;
+    margin-bottom: 0px;
+    padding: 10px 15px; 
+    background: rgb(245, 222, 179);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.footercover{
+    padding: 20px 0px;
+    background-color: rgba(23, 14, 42);
+    width: 100%;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    flex-wrap: wrap;
+    color: white;
+    width: 90vw;
+    margin: auto;
+}
+.footerlink{
+    display: flex;
+    width: fit-content;
+}
+.footeritem{
+    font-size: 1em;
+    text-align: left;
+    margin: 10px 0px;
+}
+.footer1{
+    display: block;
+    width: 90%;  
+    margin: 30px auto;
+}
+
+.footer2{
+    display: block;
+    justify-content: left;
+    width: 90%;
+    margin: 30px auto; 
+}
+
+.footer3{
+    display: block;
+    justify-content: left;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.footer4{
+    display: block;
+    justify-content: left;
+    width: 90%;
+    margin: 30px auto;
+}
+
+.footertitle{
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.quicklinks{
+    cursor: pointer;
+}
+
+.footericon{
+    margin:auto 10px;
+    font-size: 1.5em;
+    margin-left: auto;
+    color: rgb(234, 203, 144);
+}
+.mobile{
+    display: none;
+}
+@media screen and (max-width: 700px) {
+    .headercover:before{        
+        height: 100vh;
+    }
+    .headercover{
+        padding-top: 80px;
+    }
+    .headerimg{
+        display: none;
+        margin: 15px auto;
+    }
+    .aboutimgdiv{
+        width: 100%;
+    }
+    .mobile{
+        display: block;
+    }
+    .hairstyle{
+        width: 100%;
+        background: linear-gradient(to bottom, rgb(13, 13, 23), rgba(20, 13, 59, 0.5));
+        border-radius: 50%;
+    }
+    .appointment{
+        grid-template-columns: repeat(auto-fit, minmax(50vw, 1fr));
+    }
+    .inp{
+        width:150px;
+    }
+}
