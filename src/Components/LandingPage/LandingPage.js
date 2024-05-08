@@ -121,7 +121,7 @@ const LandingPage = ()=>{
                             initial = {{x:50}}
                             animate = {{x:0, transition:{duration:0.5, ease:'easeOut'}}}
                         >
-                            Book Now
+                            <a href='#appointment'>Book Now</a>
                         </motion.div>
                     </div>
                 </div>
