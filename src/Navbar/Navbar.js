@@ -8,9 +8,16 @@ const Navbar = ()=>{
     const {viewNav, setViewNav} = useContext(ContextProvider)
 
     const handleNavClick = (e) => {
+        
         const name = e.target.getAttribute('name')
-        console.log(name)
+        
         if (name === 'navitem'){
+            const navlinks = e.target.parentElement.parentElement.childNodes
+            console.log(navlinks)
+            navlinks.forEach(element => {
+                element.childNodes[0].classList.remove('active')
+            });
+            e.target.classList.add('active')
             setViewNav(false)
         }
     }

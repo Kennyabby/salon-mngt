@@ -36,6 +36,9 @@
     color: white;
     text-decoration: none;
 }
+.active{
+    font-weight: bold;
+}
 .navitem:hover{
     font-weight: bold;
 }
