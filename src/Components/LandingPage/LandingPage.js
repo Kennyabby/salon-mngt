@@ -91,7 +91,7 @@ const LandingPage = ()=>{
     ]
     return(
         <>
-            <header className='headercover'>
+            <header className='headercover' id='home'>
                 <div className='header'>
                     <motion.div 
                         className='headerimg'
@@ -127,7 +127,7 @@ const LandingPage = ()=>{
                 </div>
             </header>
             <main className='main'>
-                <div className='aboutcover'>
+                <div className='aboutcover' id='about'>
                     <div className='about-us'>
                         <div className='aboutcontent'>
                             <div className='sectiontitle aboutitems'>ABOUT US</div>
@@ -142,7 +142,7 @@ const LandingPage = ()=>{
                         </div>
                     </div>
                 </div>
-                <div className='servicescover'>
+                <div className='servicescover' id='services'>
                     <div className='services'>
                         <div className='sectiontitle'>OUR SERVICES</div>
                         <div className='sectionmiddle'>OUR BRAND OFFERS PREMIUM SERVICES</div>
@@ -216,7 +216,7 @@ const LandingPage = ()=>{
                         </div>
                     </div>
                 </div>
-                <div className='pricescover'>
+                <div className='pricescover' id='pricing'>
                     <div className='prices'>
                         <div className='sectiontitle'>PACKAGE PRICE MENU</div>
                         <div className='sectionmiddle'>OUR PACKAGE MENU FAIR PRICE GUARANTEE</div>
@@ -264,7 +264,7 @@ const LandingPage = ()=>{
                         </div>
                     </div>
                 </div>
-                <div className='imagegallerycover'>
+                <div className='imagegallerycover'  id='gallery'>
                     <div className='imagegallery'>
                         <div className='sectionmiddle sectionstyle'>STYLE TRENDS GALLERY</div>
                         <div className='gallerycover'>
@@ -276,7 +276,7 @@ const LandingPage = ()=>{
                         </div>
                     </div>
                 </div>
-                <div className='appointmentcover'>
+                <div className='appointmentcover' id='appointment'>
                     <div className='appointment'>
                         <div className='appointmentimgcover'>
                             <img className='appointmentimg' src={appointement}/>
@@ -352,7 +352,7 @@ const LandingPage = ()=>{
                     </div>
                 </div>
             </main>
-            <footer className='footercover'>
+            <footer className='footercover' id='contacts'>
                 <div className='footer'>
                     <div className='footer1'>
                         <div className='footeritem footertitle'>LOGO</div>

@@ -6,6 +6,14 @@ import {motion, AnimatePresence} from 'framer-motion'
 
 const Navbar = ()=>{
     const {viewNav, setViewNav} = useContext(ContextProvider)
+
+    const handleNavClick = (e) => {
+        const name = e.target.getAttribute('name')
+        console.log(name)
+        if (name === 'navitem'){
+            setViewNav(false)
+        }
+    }
     return(
         <>
             <div className='navcon navmobile'>
@@ -28,16 +36,18 @@ const Navbar = ()=>{
                         animate={{y:0, transition:{duration: .7, ease:'easeOut'}}}
                         exit={{y:-300, transition:{duration: .7, ease:'easeIn'}}}
                     >
-                        <ul className='navbar navmobile'>
-                            <li className='navitem' id='home'>HOME</li>
-                            <li className='navitem' id='about-us'>ABOUT US</li>
-                            <li className='navitem' id='services'>SERVICES</li>
-                            <li className='navitem' id='pricing'>PRICING</li>
-                            <li className='navitem' id='gallery'>GALLERY</li>
-                            <li className='navitem' id='contacts'>CONTACTS</li>
+                        <ul className='navbar navmobile' onClick={handleNavClick}>
+                            <li className='navitem'><a name='navitem' href='#home'>HOME</a></li>
+                            <li className='navitem'><a name='navitem' href='#about'>ABOUT US</a></li>
+                            <li className='navitem'><a name='navitem' href='#services'>SERVICES</a></li>
+                            <li className='navitem'><a name='navitem' href='#pricing'>PRICING</a></li>
+                            <li className='navitem'><a name='navitem' href='#gallery'>GALLERY</a></li>
+                            <li className='navitem'><a name='navitem' href='#contacts'>CONTACT US</a></li>
                         </ul>
                         <div className='navbase'>
-                            BOOK APPOINTMENT
+                            <a href='#appointment'>
+                                BOOK APPOINTMENT
+                            </a>
                         </div>
                     </motion.div>
                 </AnimatePresence>

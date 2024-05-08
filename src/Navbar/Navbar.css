@@ -27,16 +27,18 @@
     display: flex;
     list-style: none;
 }
-
 .navitem{
     margin: auto 10px;
     cursor: pointer;
+    width: fit-content;
 }
-
+.navitem > a{
+    color: white;
+    text-decoration: none;
+}
 .navitem:hover{
     font-weight: bold;
 }
-
 .navbase{
     color: rgb(218, 169, 79);
     padding: 10px 10px;
@@ -45,6 +47,10 @@
     margin: auto;
     font-weight: bold;
     cursor: pointer;
+}
+.navbase > a {
+    color: rgb(218, 169, 79);
+    text-decoration: none;
 }
 .navicon{
     display: none;
@@ -87,7 +93,7 @@
         display: block;
     }
     .navitem{
-        margin: 20px;
+        margin: 20px auto;
     }
     .navmobileview{
         display: inline-flex;
