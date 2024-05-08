@@ -451,9 +451,13 @@
 }
 
 .quicklinks{
+    width: fit-content;
     cursor: pointer;
 }
-
+.quicklinks > a{
+    color: white;
+    text-decoration: none;
+}
 .footericon{
     margin:auto 10px;
     font-size: 1.5em;

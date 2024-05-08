@@ -372,11 +372,11 @@ const LandingPage = ()=>{
                     </div>
                     <div className='footer3'>
                         <div className='footeritem footertitle'>QUICK LINKS</div>
-                        <div className='footeritem quicklinks'>About</div>
-                        <div className='footeritem quicklinks'>Services</div>
-                        <div className='footeritem quicklinks'>Princing</div>
-                        <div className='footeritem quicklinks'>Gallery</div>
-                        <div className='footeritem quicklinks'>Appointement</div>
+                        <div className='footeritem quicklinks'><a href='#about'>About</a></div>
+                        <div className='footeritem quicklinks'><a href='#services'>Services</a></div>
+                        <div className='footeritem quicklinks'><a href='#pricing'>Pricing</a></div>
+                        <div className='footeritem quicklinks'><a href='#gallery'>Gallery</a></div>
+                        <div className='footeritem quicklinks'><a href='#appointment'>Appointment</a></div>
                     </div>
                     <div className='footer4'>
                         <div className='footeritem footertitle'>FOLLOW US</div>
