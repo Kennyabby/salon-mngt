@@ -1,7 +1,8 @@
 import './LandingPage.css'
 import hairstyle from '../../assets/headerpic.png'
 import aboutimg from '../../assets/aboutimg.jpg'
-import { FaLocationDot } from "react-icons/fa6";
+import { useState } from 'react';
+import { FaCross, FaLocationDot } from "react-icons/fa6";
 import { MdCall, MdEmail, MdSwitchAccessShortcut } from "react-icons/md";
 import { FaFacebookSquare, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -10,8 +11,17 @@ import staff1 from '../../assets/staff1.jpg'
 import staff2 from '../../assets/staff2.jpg'
 import staff3 from '../../assets/staff3.jpg'
 import appointement from '../../assets/appointementimg.jpg'
-import {motion, AnimatePresence} from 'framer-motion'
+import { motion } from 'framer-motion'
+import { RiCloseFill } from 'react-icons/ri';
+
 const LandingPage = ()=>{
+
+    const [selectedServices, setSelectedServices] = useState([])
+    const [services, setServices] = useState(["Classic Haircut", 'Beard Trim', 'Hair Color', 
+    'Deluxe Hair Color', 'Hot Towel Shave', 'Face Facial', 'Buzz Haircut',
+    'Beard Trim Razor', 'Neck Trim', 'Kids Haircut', 'Mustache Trim',
+    'Hair Wash', 'Soon To Be Man', 'Body Massage', 'Brow Wax' ])
+
     const pricemenu = [
         {
             title: "Clasic Haircut",
@@ -89,6 +99,35 @@ const LandingPage = ()=>{
             remark: "Eyebrow wash, trim and tidy up"
         },
     ]
+    
+    const addService = (e) => {
+        const selectedValue = e.target.value
+        if (selectedValue){
+            setSelectedServices((selectedServices)=>{
+                return [...selectedServices, selectedValue]
+            })
+            
+            const filteredService = services.filter((service)=>{
+                return service!==selectedValue
+            })
+    
+            setServices(filteredService)
+        }
+    }
+
+    const removeService = (e)=>{
+        const removedService = e.target.getAttribute('name')
+        setServices((services)=>{
+            return [...services, removedService]
+        })
+
+        const filteredService = selectedServices.filter((service)=>{
+            return service!==removedService
+        })
+
+        setSelectedServices(filteredService)
+    }
+    
     return(
         <>
             <header className='headercover' id='home'>
@@ -267,12 +306,14 @@ const LandingPage = ()=>{
                 <div className='imagegallerycover'  id='gallery'>
                     <div className='imagegallery'>
                         <div className='sectionmiddle sectionstyle'>STYLE TRENDS GALLERY</div>
-                        <div className='gallerycover'>
-                            {["","","","","","","","","",""].map((image, id)=>{
-                                return (
-                                    <div className='galleryimage' key={id}></div>
-                                )
-                            })}
+                        <div className='galleryfirstcover'>                            
+                            <div className='gallerycover'>
+                                {["","","","","","","","","",""].map((image, id)=>{
+                                    return (
+                                        <div className='galleryimage' key={id}>LATEST STYLE TREND FOR MEN AND KIDS</div>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -285,6 +326,24 @@ const LandingPage = ()=>{
                         <div className='appointmentcontent'>
                             <div className='sectiontitle'>BOOK YOUR SERVICE</div>
                             <div className='sectionmiddle'>Make An Appoinment</div>
+                            <div className='appointmentservices'> 
+                                {selectedServices.length ? selectedServices.map((service, id)=>{
+                                    return (
+                                        <div key={id} name={service} className='selectedservice'>
+                                            {service} 
+                                            <div 
+                                                name={service}
+                                                onClick={removeService}
+                                                >                                                
+                                                <RiCloseFill
+                                                    className='cancelservice'   
+                                                    name={service}                                                                                                                                                         
+                                                />
+                                            </div>
+                                        </div>
+                                    )
+                                }) : null}
+                            </div>
                             <div className='appointmentform'>
                                 <div className='inpcover'>
                                     <div className='inplabel' for='name'>Name</div>
@@ -319,13 +378,20 @@ const LandingPage = ()=>{
                                         type='text' 
                                         name='contactnumber'
                                         className='inp'
-                                        placeholder='Select Services'                                      
+                                        placeholder='Select Services'    
+                                        onChange={addService}                                                   
                                     >
                                         <option value=''>Select Services</option>
-                                        <option value='haircut'>Hair Cut</option>
-                                        <option value='shaving'>Shaving</option>
-                                        <option value='trimming'>Trimming</option>
-                                        <option value='Massage'>Massage</option>
+                                        {
+                                            services.filter((service)=>{return service!==null}).map((service, id)=>{
+                                                console.log(service)
+                                                return(
+                                                    <option key={id} value={service}>
+                                                        {service}
+                                                    </option>
+                                                )
+                                            })
+                                        }
                                     </select>
                                 </div>
                                 <div className='inpcover'>
