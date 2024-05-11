@@ -7,7 +7,6 @@
     color: white;
     width: 100vw;
     justify-content:space-around;
-    /* padding: 20px; */
     z-index: 3;
 }
 
@@ -32,8 +31,9 @@
     font-size: .8em;
 }
 .navbar{
-    display: flex;
+    display: inline-flex;
     list-style: none;
+    margin: auto
 }
 .navitem{
     margin: auto 10px;
@@ -85,7 +85,7 @@
     }
     .navlogocover{
         width: 100vw;
-        padding: 8px 0px;
+        padding: 5px 0px;
         background: rgb(29, 29, 52, 0.97);
         z-index: 5;
     }
@@ -112,6 +112,6 @@
     }
     .viewnav{
         margin: auto;
-        margin-top: -400px;
+        margin-top: -500px;
     }
 }
