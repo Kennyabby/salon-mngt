@@ -3,6 +3,7 @@ import { useContext, useEffect, useRef, useState} from 'react';
 import { RiMenu3Fill, RiCloseFill } from "react-icons/ri";
 import ContextProvider from '../ContextProvider/ContextProvider';
 import {motion, AnimatePresence} from 'framer-motion'
+import logo from '../assets/logo.png'
 
 const Navbar = ()=>{
     const {viewNav, setViewNav} = useContext(ContextProvider)
@@ -35,7 +36,6 @@ const Navbar = ()=>{
         })
     },[pageUrl])
     
-    
     const handleNavClick = (e) => {
         setViewNav(false)
     }
@@ -46,7 +46,8 @@ const Navbar = ()=>{
                 <div className='navlogocover'>
                     <div className='navmobileview'>
                         <div className='navlogo'>
-                            LOGO
+                            <img src={logo} className='logo'/>
+                            {/* <div className='logotext'>CRAFT BEAUTY</div> */}
                         </div>
                         <div  className='navicon' onClick={()=>{
                             setViewNav(!viewNav)

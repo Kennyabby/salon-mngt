@@ -1,8 +1,9 @@
 import './LandingPage.css'
 import hairstyle from '../../assets/headerpic.png'
 import aboutimg from '../../assets/aboutimg.jpg'
-import { useState } from 'react';
-import { FaCross, FaLocationDot } from "react-icons/fa6";
+import { useState, useEffect } from 'react';
+import Scheduller from '../Scheduller/Scheduller'
+import { FaLocationDot } from "react-icons/fa6";
 import { MdCall, MdEmail, MdSwitchAccessShortcut } from "react-icons/md";
 import { FaFacebookSquare, FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -17,89 +18,115 @@ import { RiCloseFill } from 'react-icons/ri';
 const LandingPage = ()=>{
 
     const [selectedServices, setSelectedServices] = useState([])
+    const [field, setField] = useState((field)=> {return {...field,
+        name: "",
+        contactNumber: "",
+        email: "",
+        selectedServices: selectedServices,
+        date: "",
+        time: "",
+    }})
+
+    const [scheduledService, setScheduledService] = useState([])
     const [services, setServices] = useState(["Classic Haircut", 'Beard Trim', 'Hair Color', 
-    'Deluxe Hair Color', 'Hot Towel Shave', 'Face Facial', 'Buzz Haircut',
+    'Deluxe Haircut', 'Hot Towel Shave', 'Face Facial', 'Buzz Haircut',
     'Beard Trim Razor', 'Neck Trim', 'Kids Haircut', 'Mustache Trim',
     'Hair Wash', 'Soon To Be Man', 'Body Massage', 'Brow Wax' ])
 
+    const [viewSchedule, setViewSchedule] = useState(false)
+    const getDate = () =>{
+        const current = new Date();
+        const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
+        return date
+    }
+    const getInvoiceNumber = () =>{
+        const invdate = Date.now()
+        return "INV_CraftBeauty"+invdate
+    }
     const pricemenu = [
         {
-            title: "Clasic Haircut",
-            price: "$25",
+            title: "Classic Haircut",
+            price: "25",
             remark: "Clasic Haircut for Men and Kids"
         },
         {
             title: "Beard Trim",
-            price: "$15",
+            price: "15",
             remark: "Keep your Beard in Shape"
         },
         {
             title: "Hair Color",
-            price: '$25',
+            price: '25',
             remark: "Classic Style Hair Color with Brush"
         },
         {
             title: "Deluxe Haircut",
-            price: "$35",
+            price: "35",
             remark:"Delux Haircut for Men and Kids"
         },
         {
             title: "Hot Towel Shave",
-            price: "$35",
+            price: "35",
             remark: "Hot Towel Shave with Theraphy"
         },
         {
             title: "Face Facial",
-            price: "$35",
+            price: "35",
             remark: "Facial and Hot Towel Treatment"
         },
         {
             title: "Buzz Haircut",
-            price: "$15",
+            price: "15",
             remark: "Buzz Haircut for Men and Kids"
         },
         {
             title: "Beard Trim Razor",
-            price: "$15",
+            price: "15",
             remark: "Old Fashioned Shave with Razor"
         },
         {
             title: "Neck Trim",
-            price: "$10",
+            price: "10",
             remark: "Back Neck Hair Trim with Razor"
         },
         {
             title: "Kids Haircut",
-            price: "$20",
+            price: "20",
             remark: "Kids Haircut for 10 or Younger"
         },
         {
             title: "Mustache Trim",
-            price: "$15",
+            price: "15",
             remark: "Keep Mustache in Good Shape"
         },
         {
             title: "Hair Wash",
-            price: "$10",
+            price: "10",
             remark: "Wash and Hot Towel Treatment"
         },
         {
             title: "Soon To Be Man",
-            price: "$25",
+            price: "25",
             remark: "Style cut, hairline tidy up $ hot towel finish"
         },
         {
             title: "Body Massage",
-            price: "$30",
+            price: "30",
             remark: "Make your Body Feel Good"
         },
         {
             title: "Brow Wax",
-            price: "$17",
+            price: "17",
             remark: "Eyebrow wash, trim and tidy up"
         },
     ]
-    
+
+    useEffect(()=>{
+        setField((field=>{
+            return {...field,selectedServices}
+        }))
+    },[selectedServices])
+
     const addService = (e) => {
         const selectedValue = e.target.value
         if (selectedValue){
@@ -107,27 +134,47 @@ const LandingPage = ()=>{
                 return [...selectedServices, selectedValue]
             })
             
-            const filteredService = services.filter((service)=>{
-                return service!==selectedValue
+            e.target.value = ''
+        }
+    }
+
+    const handleInputChange = (e)=>{
+        const name = e.target.getAttribute('name')
+        const value = e.target.value
+
+        if (name!=='services'){                
+            setField((field)=>{
+                return {...field, [name]:value}
             })
-    
-            setServices(filteredService)
+        }else{
+            addService(e)
         }
     }
 
     const removeService = (e)=>{
         const removedService = e.target.getAttribute('name')
-        setServices((services)=>{
-            return [...services, removedService]
-        })
-
+      
         const filteredService = selectedServices.filter((service)=>{
             return service!==removedService
         })
 
         setSelectedServices(filteredService)
     }
-    
+
+    const scheduleAppointment = () => {        
+        const scheduledService = []
+        field.selectedServices.forEach((service)=>{
+            scheduledService.push(
+                pricemenu.filter((price)=>{
+                    return price.title === service
+                })[0]
+            )
+        })
+
+        setScheduledService(scheduledService)
+        setViewSchedule(true)
+    }
+
     return(
         <>
             <header className='headercover' id='home'>
@@ -265,7 +312,7 @@ const LandingPage = ()=>{
                                     return <div className='pricediv' key = {id}>
                                         <div className='menu'>
                                             <div className='menutitle'>{menu.title}</div>
-                                            <div className='menuprice'>{menu.price}</div>
+                                            <div className='menuprice'>{'$'+menu.price}</div>
                                         </div>
                                         <div className='menuremark'>{menu.remark}</div>
                                     </div>
@@ -324,6 +371,28 @@ const LandingPage = ()=>{
                         </div>
                                 
                         <div className='appointmentcontent'>
+                            
+                            {viewSchedule ? 
+                                <Scheduller 
+                                    date = {getDate()} 
+                                    InvoiceNumber = {getInvoiceNumber()} 
+                                    discount = {0} 
+                                    field = {field}
+                                    scheduledService = {scheduledService}
+                                    setViewSchedule = {setViewSchedule}
+                                    resetField={()=>{
+                                        setField({
+                                            name:"",
+                                            contactNumber:"",
+                                            email:"",
+                                            selectedServices:[],
+                                            date:"",
+                                            time:""
+                                        })
+                                        setSelectedServices([])
+                                    }}
+                                /> : null}
+                            
                             <div className='sectiontitle'>BOOK YOUR SERVICE</div>
                             <div className='sectionmiddle'>Make An Appoinment</div>
                             <div className='appointmentservices'> 
@@ -344,13 +413,15 @@ const LandingPage = ()=>{
                                     )
                                 }) : null}
                             </div>
-                            <div className='appointmentform'>
+                            <div className='appointmentform' onChange={handleInputChange}>
                                 <div className='inpcover'>
                                     <div className='inplabel' for='name'>Name</div>
                                     <input 
                                         type='text' 
                                         name='name'
                                         className='inp'
+                                        defaultValue={field.name}
+                                        value={field.name}
                                         placeholder='Enter Your Name'                                      
                                     />
                                 </div>
@@ -358,8 +429,10 @@ const LandingPage = ()=>{
                                     <div className='inplabel' for='contactnumber'>Contact Number</div>
                                     <input 
                                         type='text' 
-                                        name='contactnumber'
+                                        name='contactNumber'
                                         className='inp'
+                                        defaultValue={field.contactNumber}
+                                        value={field.contactNumber}
                                         placeholder='Enter Your Contact Number'                                      
                                     />
                                 </div>
@@ -369,6 +442,8 @@ const LandingPage = ()=>{
                                         type='email' 
                                         name='email'
                                         className='inp'
+                                        defaultValue={field.email}
+                                        value={field.email}
                                         placeholder='Enter Your Email Address'                                      
                                     />
                                 </div>
@@ -376,15 +451,13 @@ const LandingPage = ()=>{
                                     <div className='inplabel' for='request'>What Do You Want?</div>
                                     <select 
                                         type='text' 
-                                        name='contactnumber'
+                                        name='services'
                                         className='inp'
-                                        placeholder='Select Services'    
-                                        onChange={addService}                                                   
+                                        placeholder='Select Services'                                                                                    
                                     >
                                         <option value=''>Select Services</option>
                                         {
-                                            services.filter((service)=>{return service!==null}).map((service, id)=>{
-                                                console.log(service)
+                                            services.filter((service)=>{return !selectedServices.includes(service)}).map((service, id)=>{                                                
                                                 return(
                                                     <option key={id} value={service}>
                                                         {service}
@@ -400,6 +473,8 @@ const LandingPage = ()=>{
                                         type='date' 
                                         name='date'
                                         className='inp'
+                                        defaultValue={field.date}
+                                        value={field.date}
                                         placeholder='Choose Appointment Date'                                      
                                     />
                                 </div>
@@ -409,11 +484,13 @@ const LandingPage = ()=>{
                                         type='time' 
                                         name='time'
                                         className='inp'
+                                        defaultValue={field.time}
+                                        value={field.time}
                                         placeholder='At What Time?'                                      
                                     />
                                 </div>
                             </div>
-                            <div className='formbutton'>GET AN APPOINTMENT</div>
+                            <div className='formbutton' onClick={scheduleAppointment}>SCHEDULE APPOINTMENT</div>
                         </div>
                     </div>
                 </div>

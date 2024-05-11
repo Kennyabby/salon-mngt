@@ -446,6 +446,9 @@
 }
 .inp{
     margin: 10px auto;
+    border: 0.5px solid rgb(34, 131, 200);
+    text-indent: 10px;
+    border-radius: 5px;
     width: 100%;
     padding: 10px;
     text-align: left;

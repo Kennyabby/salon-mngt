@@ -7,16 +7,24 @@
     color: white;
     width: 100vw;
     justify-content:space-around;
-    padding: 20px;
+    /* padding: 20px; */
     z-index: 3;
 }
 
 .navlogo{
+    display: flex;
     width: fit-content;
     cursor: pointer;
     font-weight: bold;
 }
-
+.logo{
+    width: 70px;
+    /* margin: 5px; */
+    border-radius: 50%;
+}
+.logotext{
+    font-size: .8em;
+}
 .navcontent{
     display: inline-flex;
     justify-content: space-between;
@@ -77,7 +85,7 @@
     }
     .navlogocover{
         width: 100vw;
-        padding: 20px 0px;
+        padding: 8px 0px;
         background: rgb(29, 29, 52, 0.97);
         z-index: 5;
     }
