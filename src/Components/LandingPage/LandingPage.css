@@ -391,6 +391,16 @@
     padding: 10px;
 }
 
+.viewschedule{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 1s ease-out, opacity .5s ease-out;
+    transition-delay: opacity .5s;
+}
+.closeschedule{
+    opacity: 0;
+    visibility:hidden;
+}
 .appointmentservices{
     /* justify-content: left; */
     display: flex;
@@ -450,8 +460,8 @@
     border: 0.5px solid rgb(34, 131, 200);
     text-indent: 10px;
     border-radius: 5px;
-    width: 150px;
-    padding: 10px;
+    width: 200px;
+    padding: 15px 10px;
     text-align: left;
     font-size: .8em;
 }

@@ -384,9 +384,8 @@ const LandingPage = ()=>{
                         </div>
                                 
                         <div className='appointmentcontent'>
-                            
-                            {viewSchedule ? 
-                                <Scheduller 
+                            <div className={viewSchedule? 'viewschedule':'closeschedule'}>
+                                <Scheduller                                 
                                     date = {getDate()} 
                                     InvoiceNumber = {getInvoiceNumber()} 
                                     discount = {0} 
@@ -404,7 +403,8 @@ const LandingPage = ()=>{
                                         })
                                         setSelectedServices([])
                                     }}
-                                /> : null}
+                                />
+                            </div>
                             
                             <div className='sectiontitle'>BOOK YOUR SERVICE</div>
                             <div className='sectionmiddle'>Make An Appoinment</div>
