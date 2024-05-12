@@ -81,8 +81,6 @@ const Scheduller = ({
     scheduledService.forEach(service => {
         sum += parseInt(service.price)
     })
-    // setTotal(sum)
-    console.log(`Sum is = ${sum}`);
 
     return (
         <>

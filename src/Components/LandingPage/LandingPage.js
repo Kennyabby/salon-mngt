@@ -26,7 +26,7 @@ const LandingPage = ()=>{
         date: "",
         time: "",
     }})
-
+    const [formValidated, setFormValidated] = useState(true)
     const [scheduledService, setScheduledService] = useState([])
     const [services, setServices] = useState(["Classic Haircut", 'Beard Trim', 'Hair Color', 
     'Deluxe Haircut', 'Hot Towel Shave', 'Face Facial', 'Buzz Haircut',
@@ -149,6 +149,7 @@ const LandingPage = ()=>{
         }else{
             addService(e)
         }
+        setFormValidated(true)
     }
 
     const removeService = (e)=>{
@@ -172,7 +173,19 @@ const LandingPage = ()=>{
         })
 
         setScheduledService(scheduledService)
-        setViewSchedule(true)
+        let count = 0
+        const fieldKeys = Object.keys(field)
+        fieldKeys.forEach((key)=>{
+            if (field[key].length){
+                count+=1
+            }
+        })
+        if (fieldKeys.length === count){
+            setFormValidated(true)
+            setViewSchedule(true)
+        }else{
+            setFormValidated(false)
+        }
     }
 
     return(
@@ -415,7 +428,7 @@ const LandingPage = ()=>{
                             </div>
                             <div className='appointmentform' onChange={handleInputChange}>
                                 <div className='inpcover'>
-                                    <div className='inplabel' for='name'>Name</div>
+                                    <div className='inplabel' for='name'>Full Name</div>
                                     <input 
                                         type='text' 
                                         name='name'
@@ -490,6 +503,7 @@ const LandingPage = ()=>{
                                     />
                                 </div>
                             </div>
+                            <div className={formValidated?'removeformerror':'formerror'}>All fields are required!</div>
                             <div className='formbutton' onClick={scheduleAppointment}>SCHEDULE APPOINTMENT</div>
                         </div>
                     </div>

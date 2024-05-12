@@ -74,7 +74,7 @@
     color: white;
 }
 .main{
-    margin-top: -4px;
+    margin-top: 0px;
     background: rgba(255,255,255,0.3);
     /* padding-bottom: 100px; */
 }
@@ -172,7 +172,7 @@
     padding: 20px;
     background: whitesmoke;
     border-radius: 7px;
-    width: 300px;
+    width: 90%;
     margin: 20px auto;
     transition: 0.5s ease-out;
 }
@@ -405,6 +405,7 @@
     background: rgb(245, 222, 179);
     padding: 10px;
     font-weight: 350;
+    border-radius: 5px;
 }
 
 .cancelservice{
@@ -449,14 +450,35 @@
     border: 0.5px solid rgb(34, 131, 200);
     text-indent: 10px;
     border-radius: 5px;
-    width: 100%;
+    width: 150px;
     padding: 10px;
     text-align: left;
+    font-size: .8em;
+}
+.formerror{
+    background: rgba(37, 20, 78, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    color: red;
+    font-weight: bold;
+    opacity: 1;
+    animation: cssAnimation .7s 5s forwards;
+    transition: opacity .7s ease-out;
+}
+
+@keyframes cssAnimation {
+    to {
+        opacity: 0;
+    }
+}
+.removeformerror{
+    /* display: none; */
+    opacity: 0;
 }
 .formbutton{
     font-size: 1.1em;
     text-align: center;
-    margin: 50px auto;
+    margin: 10px auto;
     margin-bottom: 0px;
     padding: 10px 15px; 
     background: rgb(245, 222, 179);
